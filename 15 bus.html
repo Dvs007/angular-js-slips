@@ -1,0 +1,119 @@
+<!--14. Using AngularJS Create a SPA for Bus Ticket Reservation consisting of fields : Name,
+Address, contact no, source station(Dropdown list), Destination station, Date of booking,
+date of journey, no of passenger, name of passenger, gender of passenger etc. Display the
+e –Ticket.-->
+<html>
+<head>
+<script src="E:\angular.min.js"></script>
+<style>
+        body
+        {
+            margin:2%;
+            background-color:rgb(167, 230, 255);
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+<body ng-app="mainApp" ng-controller="busController"> 
+<h2 style=color:;>Bus ticket reservation program</h2>
+<div>
+<form name="f1">
+<table border="1">
+<tr>
+<td>Enter name :</td> 
+<td><input type="text" ng-model="name"></td>
+</tr>
+<tr>
+<td>Enter address: </td>
+<td><input type="text" name="address" ng-model="address"></td>
+</tr>
+<tr>
+<td>Enter contact no. </td>
+<td><input type="text" name="contno" ng-model="contno"> </td>
+</tr>
+<tr>
+<td>Enter source station :</td>
+<td> <select name = "source" ng-model= "bus.source">
+<option>Pune</option>
+<option>Mumbai</option>
+<option>Nashik</option>
+<option>Kolhapur</option>
+</select>
+</tr>
+<tr>
+<td>Enter Destination station :</td>
+<td> <select name = "source" ng-model= "bus.dest">
+<option>Pune</option>
+<option>Mumbai</option>
+<option>Nashik</option>
+<option>Kolhapur</option>
+</select>
+<td> 
+</td>
+</tr> 
+<tr>
+<td>Enter date of booking </td>
+<td><input type="date" name="dob" ng-model="bus.dob"> </td>
+</tr>
+<tr>
+<td>Enter date of journey </td>
+<td><input type="date" name="doj" ng-model="bus.doj"> </td>
+</tr>
+<tr>
+<td>Enter no of passenger:</td>
+<td> <input type="number" name="noofpass" ng-model="noofpass">
+</td>
+</tr> 
+<tr>
+<td> <input type="button" value="Display eticket" ng-click="isShowHide('show')">
+</td>
+</tr>
+</table>
+</form>
+</div>
+<div ng-show="showval" >
+<br><br>
+<h1 style=color:blue;>E-ticket of passenger for plain</h1>
+<form name="f2" ng-controller="busController">
+<table border="2">
+<tr>
+<th>Name</th>
+<th>Address</th>
+<th>Contno.</th>
+<th>souce station</th>
+<th>Destination station</th>
+<th>date of booking</th>
+<th>date of journey</th>
+<th>No of passenger</th>
+</tr>
+<tr>
+<td>{{name}}</td>
+<td>{{address}}</td>
+<td>{{contno}}</td>
+<td>{{bus.source}}</td> 
+<td>{{bus.dest}}</td>
+<td>{{bus.dob}}</td>
+<td>{{bus.doj}}</td>
+<td>{{noofpass}}</td>
+
+</tr>
+</table>
+</form>
+</div>
+<script>
+var mainApp = 
+angular.module("mainApp", []); mainApp.controller('busController',
+function ($scope) {
+$scope.showval=false; $scope.isShowHide = function (param)
+{
+if (param=="show") 
+{
+$scope.showval = true;
+}
+
+}
+});
+</script>
+</body>
+</html>

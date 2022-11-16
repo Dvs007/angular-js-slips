@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="" ng-init="a=178; b=624; x=false ">
+    <div>
+        <p>The sum of a ({{a}}) and b ({{b}}) is {{a+b}}</p>
+        <br>
+        <p><input type="checkbox" ng-model="tick1">Check this to disable the button</p>
+        <br>
+        <p>On clicking the button below, you will see... <span ng-show="x">this hidden text</span></p>
+        <button ng-disabled="tick1" ng-click="x= !x">Show</button>
+    </div>
+</body>
+</html>

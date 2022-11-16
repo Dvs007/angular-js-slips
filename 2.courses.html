@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<style>
+body{
+margin:2%;
+font-size:30px;
+background-color:pink;
+}
+</style>
+</head>
+<body ng-app="">
+<div ng-init="course=['BBA(CA)','BCA(Science)','Bsc(C.S)']">
+<h2 align="center"> U.G course</h2>
+<ol type='i'>
+<li ng-repeat="name in course">
+{{name}}
+</li></ol></div>
+</div>
+<div ng-init="courses=['MCA','MCA(Science)','Msc(C.S)']">
+<h2 align="center"> P.G course</h2>
+<ol type='i'>
+<li ng-repeat="nameS in courses">
+{{nameS}}
+</li></ol></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="App" ng-init="games=['badminton', 'speedcubing', 'cricket', 'volleyball', 'tennis']">
+    <div ng-controller="myctrl">
+        <p>Click this button to show list of sports</p>
+        <button ng-click="check()">ClickMe</button>
+        <ol ng-show="x">
+            <li ng-repeat="game in games">{{game}}</li>
+        </ol>
+    </div>
+    <script>
+        var app=angular.module("App", [])
+        app.controller("myctrl",function ($scope){
+            $scope.x=false;
+            $scope.check = () => {
+                $scope.x=true;
+            }
+        })
+    </script>
+</body>
+</html>
